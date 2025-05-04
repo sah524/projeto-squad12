@@ -1,0 +1,177 @@
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.logo-login {
+  margin-top: 4%;
+  width: auto;
+  max-width: 300px; min-width: 240px;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.login-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-top: -50px;
+}
+
+.login-container .caixa-login {
+  background-color: #ffffff;
+  border-radius: 120px;
+  overflow: hidden;
+  padding: 40px; 
+  width: 90%; 
+  max-width: 550px; min-width: 400px; 
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  margin-top: -70%;
+}
+
+.login-container .caixa-login form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.login-container .caixa-login .overlap-group-2 {
+  margin-bottom: 20px; 
+}
+
+.login-container .caixa-login .campo-de-texto {
+  background-color: var(--ghost-white);
+  border-radius: 50px;
+  padding: 18px 20px; 
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "TT Norms Pro-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-container .caixa-login button.botao-entrar {
+  background-color: var(--sky-blue-caryola);
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 25px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-container .caixa-login .text-wrapper-7 {
+  font-size: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--red-purple);
+}
+
+.login-container .caixa-login button.botao-entrar .text-wrapper-8 {
+  font-family: "TT Norms Pro-Bold", Helvetica;
+  font-weight: 700;
+  color: var(--ghost-white);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-container .caixa-login a {
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  margin-top: 15px;
+  display: block;
+}
+
+.login-container .caixa-login a.PROFESSOR-CLIQUE .text-wrapper-11,
+.login-container .caixa-login a.ESQUECI-MINHA-SENHA .text-wrapper-12 {
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.rodape {
+  background-color: var(--oxford-blue);
+  color: #ffffff;
+  padding: 15px 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.rodape > div { 
+  display: flex;
+  gap: 20px;
+  margin-left: 50px;
+}
+
+.rodape > div .text-wrapper-4,
+.rodape > div .text-wrapper-5,
+.rodape > div .text-wrapper-6 {
+  font-family: "TT Norms Pro-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 10px;
+  flex-shrink: 0;
+  color: var(--ghost-white);
+}
+
+.rodape img.img {
+  width: auto;
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
+  align-items: center;
+  margin-left: 150px;
+
+}
+
+.rodape p.a-educa-o-a-arma {
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-right: 50px; 
+  text-align: right; 
+  flex-shrink: 0; 
+}
