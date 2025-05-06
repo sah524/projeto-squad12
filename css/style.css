@@ -19,6 +19,7 @@
 }
 
 .logo-login {
+  display: block;
   margin-top: 4%;
   width: auto;
   max-width: 300px; min-width: 240px;
