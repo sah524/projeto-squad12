@@ -20,7 +20,7 @@
 
 .logo-login {
   display: flex;
-  margin-top: 4%;
+  padding: 30px 30px 50px 30px;
   width: auto;
   max-width: 300px; min-width: 240px;
   height: auto;
