@@ -5,7 +5,6 @@
   position: relative;
 }
 
-/* IMAGEM DE FUNDO */
 .background-image {
   position: absolute;
   top: 0;
@@ -16,8 +15,7 @@
   z-index: 0;
 }
 
-/* LOGO */
-.logo-login {
+.logo-login, .logo-menu {
   margin: 30px auto 0;
   width: auto;
   max-width: 10%;
@@ -25,7 +23,6 @@
   z-index: 1;
 }
 
-/* ÁREA DE LOGIN CENTRALIZADA */
 .login-container {
   flex: 1;
   display: flex;
@@ -36,10 +33,9 @@
   padding: 20px;
 }
 
-/* CAIXA DE LOGIN */
 .caixa-login {
   background-color: #fff;
-  border-radius: 120px;
+  border-radius: 50px;
   padding: 40px;
   width: 100%;
   max-width: 500px;
@@ -47,7 +43,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* TÍTULO */
 .text-wrapper-7 {
   font-size: 40px;
   color: var(--red-purple);
@@ -55,7 +50,6 @@
   margin-bottom: 30px;
 }
 
-/* CAMPOS DE TEXTO */
 .campo-de-texto {
   background-color: #f8f8ff;
   border-radius: 30px;
@@ -66,7 +60,6 @@
   font-size: 16px;
 }
 
-/* BOTÃO */
 .botao-entrar {
   background-color: var(--sky-blue-caryola);
   color: var(--ghost-white);
@@ -80,7 +73,6 @@
   margin-top: 10px;
 }
 
-/* LINKS */
 .text-wrapper-11, .text-wrapper-12 {
   text-align: center;
   color: #000;
@@ -90,7 +82,6 @@
   display: block;
 }
 
-/* RODAPÉ */
 .rodape {
   background-color: var(--oxford-blue);
   color: var(--ghost-white);
