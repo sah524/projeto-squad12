@@ -481,3 +481,666 @@ button.remover {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+   body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Evita rolagem horizontal */
+            background-color: #0d1117; /* Cor de fundo escura padrão */
+            margin: 0;
+            padding: 0;
+            color: #e2e8f0; /* Cor do texto padrão */
+        }
+
+        .background-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            z-index: 0; /* Fundo mais abaixo */
+        }
+
+        .background-image { /* Esta regra pode ser redundante se .background-container já tiver background-image */
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .logo-login, .logo-menu {
+            margin: 30px auto 0;
+            width: auto;
+            max-width: 10%;
+            min-width: 80px;
+            z-index: 1;
+        }
+
+        .login-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            position: relative;
+            padding: 20px;
+        }
+
+        .caixa-login {
+            background-color: #fff;
+            border-radius: 50px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            min-width: 300px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-wrapper-7 {
+            font-size: 40px;
+            color: var(--red-purple);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .campo-de-texto {
+            background-color: #f8f8ff;
+            border-radius: 30px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .botao-entrar {
+            background-color: var(--sky-blue-caryola);
+            color: var(--ghost-white);
+            border: none;
+            border-radius: 30px;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .text-wrapper-11, .text-wrapper-12 {
+            text-align: center;
+            color: #000;
+            text-decoration: underline;
+            font-size: 14px;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .rodape {
+            background-color: var(--oxford-blue);
+            color: var(--ghost-white);
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10; /* Z-index alto para ficar acima do jogo */
+            position: relative; /* Necessário para z-index funcionar */
+            margin-top: auto; /* Empurra o rodapé para baixo */
+        }
+
+        .rodape > div {
+            display: flex;
+            gap: 20px;
+            margin-left: 20px;
+        }
+
+        .rodape .text-wrapper-4,
+        .rodape .text-wrapper-5,
+        .rodape .text-wrapper-6 {
+            font-weight: bold;
+            color: var(--ghost-white);
+        }
+
+        .rodape .img {
+            max-width: 100px;
+            margin: 0 auto;
+        }
+
+        .rodape p {
+            margin-right: 20px;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        .menu-navegacao {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 30px;
+            z-index: 20; /* Z-index mais alto para ficar acima de tudo */
+            position: relative; /* Necessário para z-index funcionar */
+        }
+
+        .menu-esquerda {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .menu-esquerda a {
+            color: var(--ghost-white);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .usuario-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--ghost-white);
+        }
+        .usuario-info a { /* Estilo específico para o link "Sair" */
+            color: var(--ghost-white);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .usuario-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .conteudo-principal {
+            flex: 1;
+            /* Removido padding para que o game-container possa ocupar 100% da área disponível */
+            position: relative;
+            z-index: 1;
+            color: var(--ghost-white);
+            text-align: center;
+            display: flex; /* Para centralizar o game-container */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Ajusta a altura para preencher o espaço entre o menu e o rodapé */
+            height: calc(100vh - 80px - 80px); /* Exemplo: 80px para nav, 80px para footer */
+            overflow: hidden; /* Adicionado overflow para o conteúdo principal caso o jogo seja menor que a tela */
+            background-image: url('135921865-planetas-do-sistema-solar-e-via-láctea-incrível-papel-de-parede-de-ficção-científica.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .quizzes-container {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--ghost-white);
+            z-index: 1;
+        }
+
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .quiz-card {
+            background-color: var(--midnight-blue);
+            border-radius: 20px;
+            padding: 20px;
+            font-weight: bold;
+            color: var(--ghost-white);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .quiz-card:hover {
+            transform: scale(1.03);
+            background-color: var(--sky-blue-caryola);
+            color: var(--red-purple);
+        }
+
+        .ranking-container {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--ghost-white);
+            z-index: 1;
+        }
+
+        .ranking-section {
+            margin-top: 30px;
+        }
+
+        .ranking-section h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .ranking-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+
+        .ranking-list li {
+            background-color: #ccf;
+            color: #333;
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .professor-painel {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--ghost-white);
+            z-index: 1;
+        }
+
+        .painel-opcoes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .painel-opcoes button {
+            background-color: var(--midnight-blue);
+            color: var(--ghost-white);
+            border: none;
+            padding: 15px 25px;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .painel-opcoes button:hover {
+            background-color: var(--sky-blue-caryola);
+            transform: scale(1.05);
+            color: var(--red-purple);
+        }
+
+        .criar-quiz-container {
+            padding: 40px 20px;
+            color: var(--ghost-white);
+            text-align: center;
+            z-index: 1;
+        }
+
+        .form-quiz {
+            background: var(--ghost-white);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        textarea {
+            width: 100%; height: auto;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .upload-imagem {
+            margin: 10px 0;
+        }
+
+        #btnImagem {
+            padding: 8px 12px;
+            background-color: var(--midnight-blue);
+            color: var(--ghost-white);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #previewImagem img {
+            margin-top: 10px;
+            max-width: 300px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .form-quiz input,
+        .form-quiz select {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .form-quiz label {
+            text-align: left;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .form-quiz button {
+            margin-top: 20px;
+            padding: 15px;
+            font-weight: bold;
+            background-color: var(--midnight-blue);
+            border: none;
+            border-radius: 10px;
+            color: var(--ghost-white);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-quiz button:hover {
+            background-color: var(--sky-blue-caryola);
+            color: var(--red-purple);
+        }
+
+        .filtro-container {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--ghost-white);
+            z-index: 1;
+        }
+
+        .filtro-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: var(--ghost-white);
+            padding: 25px;
+            border-radius: 15px;
+            color: #333;
+        }
+
+        .filtro-form input,
+        .filtro-form select {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .filtro-form button {
+            background-color: var(--sky-blue-caryola);
+            color: var(--ghost-white);
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .lista-questoes {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .questao-item {
+            background: var(--ghost-white);
+            color: #333;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .botoes-acoes {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .botoes-acoes button {
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+        }
+
+        button.visualizar {
+            background-color: #00bfff;
+            color: var(--ghost-white);
+        }
+
+        button.editar {
+            background-color: #ffa500;
+            color: var(--ghost-white);
+        }
+
+        button.remover {
+            background-color: #dc143c;
+            color: var(--ghost-white);
+        }
+
+        .botoes-acoes button:hover {
+            opacity: 0.85;
+        }
+
+        .modal-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            color: #000;
+        }
+
+        .modal-container.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--ghost-white);
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+/* INÍCIO DOS ESTILOS DO JOGO DO SISTEMA SOLAR (IDENTIFICADOR CSS) */
+.game-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px - 80px); /* Altura para caber entre menu e rodapé */
+    overflow: hidden; /* Garante que nada saia da área */
+    display: flex; /* Usamos flex para centralizar o conteúdo geral */
+    flex-direction: column;
+    align-items: center; /* Centraliza itens horizontalmente */
+    justify-content: center; /* Centraliza itens verticalmente */
+    box-sizing: border-box;
+    background-image: url('fundo_estrelado.jpg'); /* Fundo estático */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilo para o Sol (agora fixo no centro) */
+.planet.sun {
+    position: absolute; /* Posição absoluta para fixar o Sol */
+    width: 15vw; /* Tamanho do Sol */
+    height: 15vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o Sol */
+    background: radial-gradient(circle, #ffeb3b, #ff9800);
+    box-shadow: 0 0 50px rgba(255, 255, 0, 0.8);
+    z-index: 0; /* Para ficar atrás dos planetas */
+    border-radius: 50%;
+}
+
+/* Contêiner para os planetas, usando Grid para layout estático */
+.planets-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    /* NOVO AJUSTE: Tentando simular a ordem orbital visualmente de forma mais compacta */
+    grid-template-areas:
+        ". mercury venus ."      /* Mercúrio e Vênus (mais próximos do topo) */
+        "earth . . mars"         /* Terra e Marte (nas laterais, mais próximos do centro) */
+        ". sun-placeholder . ."  /* Placeholder para o Sol no centro */
+        "jupiter . saturn ."     /* Júpiter e Saturno (mais afastados, abaixo) */
+        "uranus neptune pluto .";/* Urano, Netuno e Plutão (mais externos) */
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 colunas */
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; /* 5 linhas para melhor distribuição vertical */
+    gap: 3vw; /* **ALTERADO AQUI: Reduzido o espaçamento entre as células do grid** */
+}
+
+/* Posicionamento dos planetas usando grid-area */
+.planet.mercury { grid-area: mercury; align-self: end; justify-self: center; }
+.planet.venus { grid-area: venus; align-self: end; justify-self: center; }
+.planet.earth { grid-area: earth; align-self: center; justify-self: end; }
+.planet.mars { grid-area: mars; align-self: center; justify-self: start; }
+.planet.jupiter { grid-area: jupiter; align-self: start; justify-self: end; }
+.planet.saturn { grid-area: saturn; align-self: start; justify-self: start; }
+.planet.uranus { grid-area: uranus; align-self: center; justify-self: end; }
+.planet.neptune { grid-area: neptune; align-self: center; justify-self: center; }
+.planet.pluto { grid-area: pluto; align-self: center; justify-self: start; }
+
+
+.planet {
+    position: relative; /* Para posicionar o nome e o indicador de nível */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Para empilhar nome e indicador */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    user-select: none;
+    border: 2px solid transparent;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total */
+    z-index: 1; /* Z-index padrão */
+}
+
+/* Tamanhos dos planetas (ajuste individualmente se necessário) */
+.planet.mercury { width: 4vw; height: 4vw; background-color: #a9a9a9; }
+.planet.venus { width: 7vw; height: 7vw; background-color: #f5deb3; }
+.planet.earth { width: 6vw; height: 6vw; background-color: #4682b4; }
+.planet.mars { width: 5vw; height: 5vw; background-color: #cd5c5c; }
+.planet.jupiter { width: 15vw; height: 15vw; background-color: #d2b48c; }
+.planet.saturn { width: 10vw; height: 10vw; background-color: #f4a460; }
+.planet.uranus { width: 7vw; height: 7vw; background-color: #afeeee; }
+.planet.neptune { width: 6vw; height: 6vw; background-color: #6495ed; }
+.planet.pluto { width: 3vw; height: 3vw; background-color: #b0c4de; } /* Plutão é um planeta anão */
+
+
+/* Efeito de hover */
+.planet:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.6);
+    border: 2px solid cyan;
+    z-index: 5;
+}
+
+.planet-name {
+    position: absolute;
+    bottom: -1.5em; /* Posição do nome abaixo do planeta */
+    font-size: 0.8em;
+    white-space: nowrap;
+    left: 50%; /* Centraliza o nome horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centralização */
+}
+
+/* Indicador de nível (círculo com borda, por exemplo) */
+.level-indicator {
+    position: absolute;
+    top: -0.5em; /* Posição acima do planeta */
+    right: -0.5em; /* Posição à direita do planeta */
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background-color: transparent; /* Padrão invisível */
+    border: 2px solid transparent; /* Padrão invisível */
+    display: none; /* Oculta por padrão, só mostra se o nível for atingido */
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: white;
+    text-shadow: none;
+    pointer-events: none; /* Não impede o clique no planeta */
+}
+
+/* Estilo para planetas com nível atingido (ex: borda dourada) */
+.planet.unlocked .level-indicator {
+    display: flex; /* Exibe o indicador */
+    background-color: #4CAF50; /* Verde para "desbloqueado" */
+    border-color: #FFD700; /* Borda dourada */
+}
+
+/* Estilos para o foguete e botões de navegação (removidos) */
+.rocket, .nav-button {
+    display: none;
+}
+
+/* Quiz Modal (oculto) */
+.quiz-modal {
+    display: none; /* Oculta o modal de quiz, pois ele será em outra página */
+}
+
+/* Message Box (mantido para mensagens gerais) */
+.message-box {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.message-box.show { opacity: 1; }
+/* FIM DOS ESTILOS DO JOGO DO SISTEMA SOLAR (IDENTIFICADOR CSS) */

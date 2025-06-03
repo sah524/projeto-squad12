@@ -1,50 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - Ideia Space</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/styleguide.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Ideia Space</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styleguide.css">
+    <link rel="stylesheet" href="css/game.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <div class="background-container">
-    <img class="background-image" src="img/fundo_estrelado.jpg" alt="Fundo" />
-    <nav class="menu-navegacao">
-      <div class="menu-esquerda">
-        <img src="img/idea-space-logo-branca.png" alt="Logo" class="logo-menu" />
-        <a href="home.html">HOME</a>
-        <a href="quizzes.html">QUIZZES</a>
-        <a href="ranking.html">RANKING</a>
-      </div>
-      <div class="usuario-info">
-        <span>Nome Aluno</span>
-        <img src="img/avataaars.svg" alt="Avatar" />
-        <a href="index.html">Sair</a>
-      </div>
-    </nav>
-    <main class="conteudo-principal">
-      <h1>Chegue até o planeta Terra</h1>
-    </main>
-  </div>
-     <div class="rodape">
-    <div>
-      <a href="https://www.instagram.com/ideiaspace" target="_blank" rel="noopener noreferrer">
-        <div class="text-wrapper-4">Instagram</div>
-      </a>
-      <a href="" target="_blank" rel="noopener noreferrer">
-        <div class="text-wrapper-5">WhatsApp</div>
-      </a>
-      <a href="" target="_blank" rel="noopener noreferrer">
-        <div class="text-wrapper-6">E-mail</div>
-      </a>
+    <div class="background-container">
+         <video class="background-video" autoplay muted loop>
+      <source src="movie/fundoEstrelado1.mp4" type="video/mp4">
+
+    </video>
+        <nav class="menu-navegacao">
+            <div class="menu-esquerda">
+                <img src="img/idea-space-logo-branca.png" alt="Logo" class="logo-menu" />
+                <a href="home.html">HOME</a>
+                <a href="quizzes.html">QUIZZES</a>
+                <a href="ranking.html">RANKING</a>
+            </div>
+            <div class="usuario-info">
+                <span>Nome Aluno</span>
+                <img src="img/avataaars.svg" alt="Avatar" />
+                <a href="index.html">Sair</a>
+            </div>
+        </nav>
+        <main class="conteudo-principal">
+            <div id="gameContainer" class="game-container">
+                <div id="sun" class="planet sun"></div>
+
+                <div id="planetsGrid" class="planets-grid">
+                    <div id="mercury" class="planet mercury">
+                        <div class="planet-name">Mercúrio</div>
+                        <div class="level-indicator"></div>
+                    </div>
+                    <div id="venus" class="planet venus">
+                        <div class="planet-name">Vênus</div>
+                        <div class="level-indicator"></div>
+                    </div>
+                    <div id="earth" class="planet earth">
+                        <div class="planet-name">Terra</div>
+                        <div class="level-indicator"></div>
+                    </div>
+                    <div id="mars" class="planet mars">
+                        <div class="planet-name">Marte</div>
+                        <div class="level-indicator"></div>
+                    </div>
+                    <div id="jupiter" class="planet jupiter">
+                        <div class="planet-name">Júpiter</div>
+                        <div class="level-indicator"></div>
+                    </div>
+                    <div id="saturn" class="planet saturn">
+                        <div class="planet-name">Saturno</div>
+                        <div class="level-indicator"></div>
+                    </div>
+                    <div id="uranus" class="planet uranus">
+                        <div class="planet-name">Urano</div>
+                        <div class="level-indicator"></div>
+                    </div>
+                    <div id="neptune" class="planet neptune">
+                        <div class="planet-name">Netuno</div>
+                        <div class="level-indicator"></div>
+                    </div>
+                    <div id="pluto" class="planet pluto">
+                        <div class="planet-name">Plutão</div>
+                        <div class="level-indicator"></div>
+                    </div>
+                </div>
+
+                </div>
+            </main>
     </div>
-    <img class="img" src="img/idea-space-logo-branca.png" alt="Logo Rodapé" />
-    <p class="a-educa-o-a-arma">
-      "A educação é a arma mais poderosa para mudar o mundo."<br />Nelson Mandela
-    </p>
-  </div>
+    <div id="messageBox" class="message-box"></div>
+    <script src="js/game.js"></script>
 </body>
 </html>
