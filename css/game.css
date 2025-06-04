@@ -1,20 +1,18 @@
 /* INÍCIO DOS ESTILOS DO JOGO DO SISTEMA SOLAR (IDENTIFICADOR CSS) */
 .game-container {
-    min-height: 100vh;
-    padding-top: 80px; /* Espaço para o menu */
-    padding-bottom: 120px; /* Espaço para o rodapé */
-    overflow-y: auto; /* Permite rolar se necessário */
-    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 90vh;
+    overflow: hidden; /* Garante que nada saia da área */
+    display: flex; /* Usamos flex para centralizar o conteúdo geral */
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Centraliza itens horizontalmente */
+    justify-content: center; /* Centraliza itens verticalmente */
     box-sizing: border-box;
-    background-image: url('fundo_estrelado.jpg');
+    background-image: url('fundo_estrelado.jpg'); /* Fundo estático */
     background-size: cover;
     background-position: center;
-    position: relative;
 }
-
 
 /* Estilo para o Sol (agora fixo no centro) */
 .planet.sun {
@@ -24,7 +22,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza o Sol */
-    background: radial-gradient(circle, #ffeb3b, #ff9800);
+    background-image: url(../img/sol.png); background-size: 19.5vw; background-position: center;
     box-shadow: 0 0 50px rgba(255, 255, 0, 0.8);
     z-index: 0; /* Para ficar atrás dos planetas */
     border-radius: 50%;
@@ -61,7 +59,7 @@
 .planet.earth { grid-area: earth; align-self: center; justify-self: end; }
 .planet.mars { grid-area: mars; align-self: center; justify-self: start; }
 .planet.jupiter { grid-area: jupiter; align-self: start; justify-self: end; }
-.planet.saturn { grid-area: saturn; align-self: start; justify-self: end; } /* Ajustado justify-self */
+.planet.saturn { grid-area: saturn; align-self: start; justify-self: start; }
 .planet.uranus { grid-area: uranus; align-self: center; justify-self: end; }
 .planet.neptune { grid-area: neptune; align-self: center; justify-self: center; }
 .planet.pluto { grid-area: pluto; align-self: center; justify-self: start; }
@@ -83,19 +81,18 @@
     border: 2px solid transparent;
     box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total */
     z-index: 1; /* Z-index padrão */
-    padding-bottom: 60px;
 }
 
 /* Tamanhos dos planetas (ajuste individualmente se necessário) */
-.planet.mercury { width: 4vw; height: 4vw; background-color: #a9a9a9; }
-.planet.venus { width: 7vw; height: 7vw; background-color: #f5deb3; }
-.planet.earth { width: 6vw; height: 6vw; background-color: #4682b4; }
-.planet.mars { width: 5vw; height: 5vw; background-color: #cd5c5c; }
-.planet.jupiter { width: 15vw; height: 15vw; background-color: #d2b48c; }
-.planet.saturn { width: 10vw; height: 10vw; background-color: #f4a460; }
-.planet.uranus { width: 7vw; height: 7vw; background-color: #afeeee; }
-.planet.neptune { width: 6vw; height: 6vw; background-color: #6495ed; }
-.planet.pluto { width: 3vw; height: 3vw; background-color: #b0c4de; } /* Plutão é um planeta anão */
+.planet.mercury { width: 4vw; height: 4vw; background-image: url(../img/mercurio.png); background-size: 4.8vw; background-position: center; }
+.planet.venus { width: 7vw; height: 7vw; background-image: url(../img/venus.png); background-size: 9.3vw; background-position: center; }
+.planet.earth { width: 6vw; height: 6vw; background-image: url(../img/terra.png); background-size: 7.3vw; background-position: center; }
+.planet.mars { width: 5vw; height: 5vw; background-image: url(../img/marte.png); background-size: 6.3vw; background-position: center; }
+.planet.jupiter { width: 15vw; height: 15vw; background-image: url(../img/jupiter.png); background-size: 17.5vw; background-position: center; }
+.planet.saturn { width: 10vw; height: 10vw; background-image: url(../img/saturno.png); background-size: 7.9vw; background-position: center; }
+.planet.uranus { width: 7vw; height: 7vw; background-image: url(../img/urano.png); background-size: 9.3vw; background-position: center;  }
+.planet.neptune { width: 6vw; height: 6vw; background-image: url(../img/netuno.png); background-size: 8.3vw; background-position: center; }
+.planet.pluto { width: 3vw; height: 3vw; background-image: url(../img/plutao.png); background-size: 3.8vw; background-position: center; } /* Plutão é um planeta anão */
 
 
 /* Efeito de hover */
