@@ -1,0 +1,910 @@
+/* tele.css - ajustes responsivos para mobile e tablet */
+/*
+@media (max-width: 420px) {
+  .menu-navegacao {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .menu-esquerda {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .usuario-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-login,
+  .logo-menu {
+    max-width: 40%;
+  }
+
+  .rodape {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .rodape > div {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .rodape p {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .conteudo-principal {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .game-container {
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+.planets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+  grid-template-areas:
+    "sun sun"
+    "mercury venus"
+    "earth mars"
+    "jupiter saturn"
+    "uranus neptune";
+  place-items: center;
+}
+
+.planet.mercury { grid-area: mercury; margin: 10px;}
+.planet.venus { grid-area: venus; margin: 10px;}
+.planet.earth { grid-area: earth; margin: 10px;}
+.planet.mars { grid-area: mars; margin: 10px;}
+.planet.jupiter { grid-area: jupiter; margin: 10px;}
+.planet.saturn { grid-area: saturn; margin: 10px;}
+.planet.uranus { grid-area: uranus; margin: 10px;}
+.planet.neptune { grid-area: neptune; margin: 10px;}
+
+  .planet {
+    width: 12vw !important;
+    height: 12vw !important;
+    background-size: 13vw !important;
+  }
+
+  .planet.sun {
+    width: 25vw !important;
+    height: 25vw !important;
+    background-size: 26vw !important;
+    grid-area: sun;
+  }
+
+  .planet-name {
+    font-size: 0.6em;
+  }
+
+  .level-indicator {
+    width: 1em;
+    height: 1em;
+    font-size: 0.5em;
+  }
+
+  .quiz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-card {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .ranking-list li {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .painel-opcoes {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-quiz,
+  .filtro-form,
+  .lista-questoes {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .form-quiz input,
+  .form-quiz select,
+  .filtro-form input,
+  .filtro-form select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-quiz button,
+  .filtro-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .text-wrapper-7 {
+    font-size: 28px;
+  }
+
+  .campo-de-texto {
+    font-size: 14px;
+  }
+
+  .botao-entrar {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 320px) {
+  .menu-navegacao {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .menu-esquerda {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .usuario-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-login,
+  .logo-menu {
+    max-width: 40%;
+  }
+
+  .rodape {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .rodape > div {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .rodape p {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .conteudo-principal {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .game-container {
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .planets-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "mercury venus"
+      "earth mars"
+      "sun-placeholder sun-placeholder"
+      "jupiter saturn"
+      "uranus neptune"
+      "pluto .";
+    gap: 1.5vw;
+  }
+
+  .planet {
+    width: 12vw !important;
+    height: 12vw !important;
+    background-size: 13vw !important;
+  }
+
+  .planet.sun {
+    width: 25vw !important;
+    height: 25vw !important;
+    background-size: 26vw !important;
+  }
+
+  .planet-name {
+    font-size: 0.6em;
+  }
+
+  .level-indicator {
+    width: 1em;
+    height: 1em;
+    font-size: 0.5em;
+  }
+
+  .quiz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-card {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .ranking-list li {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .painel-opcoes {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-quiz,
+  .filtro-form,
+  .lista-questoes {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .form-quiz input,
+  .form-quiz select,
+  .filtro-form input,
+  .filtro-form select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-quiz button,
+  .filtro-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .text-wrapper-7 {
+    font-size: 28px;
+  }
+
+  .campo-de-texto {
+    font-size: 14px;
+  }
+
+  .botao-entrar {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 360px) {
+  .menu-navegacao {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .menu-esquerda {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .usuario-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-login,
+  .logo-menu {
+    max-width: 40%;
+  }
+
+  .rodape {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .rodape > div {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .rodape p {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .conteudo-principal {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .game-container {
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .planets-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "mercury venus"
+      "earth mars"
+      "sun-placeholder sun-placeholder"
+      "jupiter saturn"
+      "uranus neptune"
+      "pluto .";
+    gap: 1.5vw;
+  }
+
+  .planet {
+    width: 12vw !important;
+    height: 12vw !important;
+    background-size: 13vw !important;
+  }
+
+  .planet.sun {
+    width: 25vw !important;
+    height: 25vw !important;
+    background-size: 26vw !important;
+  }
+
+  .planet-name {
+    font-size: 0.6em;
+  }
+
+  .level-indicator {
+    width: 1em;
+    height: 1em;
+    font-size: 0.5em;
+  }
+
+  .quiz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-card {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .ranking-list li {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .painel-opcoes {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-quiz,
+  .filtro-form,
+  .lista-questoes {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .form-quiz input,
+  .form-quiz select,
+  .filtro-form input,
+  .filtro-form select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-quiz button,
+  .filtro-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .text-wrapper-7 {
+    font-size: 28px;
+  }
+
+  .campo-de-texto {
+    font-size: 14px;
+  }
+
+  .botao-entrar {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+*/
+
+@media (orientation: portrait) {
+
+
+  .planet {
+    width: 14vw;
+    height: 14vw;
+    background-size: 15vw;
+  }
+
+  .planet.sun {
+    width: 28vw;
+    height: 28vw;
+    background-size: 30vw;
+  }
+}
+
+@media (orientation: landscape) {
+
+
+  .planet {
+    width: 10vw;
+    height: 10vw;
+    background-size: 11vw;
+  }
+
+  .planet.sun {
+    width: 20vw;
+    height: 20vw;
+    background-size: 22vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .menu-navegacao {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .menu-esquerda {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .usuario-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-login,
+  .logo-menu {
+    max-width: 40%;
+  }
+
+  .rodape {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .rodape > div {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .rodape p {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .conteudo-principal {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .game-container {
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .planet {
+    width: 12vw !important;
+    height: 12vw !important;
+    background-size: 13vw !important;
+  }
+
+  .planet.sun {
+    width: 25vw !important;
+    height: 25vw !important;
+    background-size: 26vw !important;
+  }
+
+  .planet-name {
+    font-size: 0.6em;
+  }
+
+  .level-indicator {
+    width: 1em;
+    height: 1em;
+    font-size: 0.5em;
+  }
+
+  .quiz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-card {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .ranking-list li {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .painel-opcoes {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-quiz,
+  .filtro-form,
+  .lista-questoes {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .form-quiz input,
+  .form-quiz select,
+  .filtro-form input,
+  .filtro-form select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-quiz button,
+  .filtro-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .text-wrapper-7 {
+    font-size: 28px;
+  }
+
+  .campo-de-texto {
+    font-size: 14px;
+  }
+
+  .botao-entrar {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+/*
+@media (max-width: 576px) {
+  .menu-navegacao {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .menu-esquerda {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .usuario-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-login,
+  .logo-menu {
+    max-width: 40%;
+  }
+
+  .rodape {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .rodape > div {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .rodape p {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .conteudo-principal {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .game-container {
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .planets-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "mercury venus"
+      "earth mars"
+      "sun-placeholder sun-placeholder"
+      "jupiter saturn"
+      "uranus neptune"
+      "pluto .";
+    gap: 1.5vw;
+  }
+
+  .planet {
+    width: 12vw !important;
+    height: 12vw !important;
+    background-size: 13vw !important;
+  }
+
+  .planet.sun {
+    width: 25vw !important;
+    height: 25vw !important;
+    background-size: 26vw !important;
+  }
+
+  .planet-name {
+    font-size: 0.6em;
+  }
+
+  .level-indicator {
+    width: 1em;
+    height: 1em;
+    font-size: 0.5em;
+  }
+
+  .quiz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-card {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .ranking-list li {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .painel-opcoes {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-quiz,
+  .filtro-form,
+  .lista-questoes {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .form-quiz input,
+  .form-quiz select,
+  .filtro-form input,
+  .filtro-form select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-quiz button,
+  .filtro-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .text-wrapper-7 {
+    font-size: 28px;
+  }
+
+  .campo-de-texto {
+    font-size: 14px;
+  }
+
+  .botao-entrar {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-navegacao {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .menu-esquerda {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .usuario-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-login,
+  .logo-menu {
+    max-width: 40%;
+  }
+
+  .rodape {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .rodape > div {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .rodape p {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .conteudo-principal {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .game-container {
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .planets-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "mercury venus"
+      "earth mars"
+      "sun-placeholder sun-placeholder"
+      "jupiter saturn"
+      "uranus neptune"
+      "pluto .";
+    gap: 1.5vw;
+  }
+
+  .planet {
+    width: 12vw !important;
+    height: 12vw !important;
+    background-size: 13vw !important;
+  }
+
+  .planet.sun {
+    width: 25vw !important;
+    height: 25vw !important;
+    background-size: 26vw !important;
+  }
+
+  .planet-name {
+    font-size: 0.6em;
+  }
+
+  .level-indicator {
+    width: 1em;
+    height: 1em;
+    font-size: 0.5em;
+  }
+
+  .quiz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-card {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .ranking-list li {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .painel-opcoes {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-quiz,
+  .filtro-form,
+  .lista-questoes {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .form-quiz input,
+  .form-quiz select,
+  .filtro-form input,
+  .filtro-form select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-quiz button,
+  .filtro-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .text-wrapper-7 {
+    font-size: 28px;
+  }
+
+  .campo-de-texto {
+    font-size: 14px;
+  }
+
+  .botao-entrar {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+

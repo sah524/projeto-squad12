@@ -2,4 +2,5 @@ body, html {
   height: 100%;
   width: 100%;
   font-family: var(--font-regular);
+  overflow-x: hidden;
 }
