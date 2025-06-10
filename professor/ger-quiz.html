@@ -34,12 +34,14 @@
         <input type="text" placeholder="Buscar por palavra-chave..." />
         <select>
           <option value="">Selecione o tema</option>
-          <option value="aula01">Aula 01</option>
-          <option value="aula02">Aula 02</option>
-          <option value="aula03">Aula 03</option>
-          <option value="aula04">Aula 04</option>
-          <option value="aula05">Aula 05</option>
-          <option value="aula06">Aula 06</option>
+          <option value="mercurio">Mercúrio</option>
+          <option value="venus">Vênus</option>
+          <option value="terra">Terra</option>
+          <option value="marte">Marte</option>
+          <option value="jupiter">Júpiter</option>
+          <option value="saturno">Saturno</option>
+          <option value="urano">Urano</option>
+          <option value="netuno">Netuno</option>
         </select>
         <select>
           <option value="">Selecione o nível</option>
@@ -50,27 +52,7 @@
         <button type="submit">FILTRAR</button>
       </form>
 
-<section class="lista-questoes">
-  <div class="questao-item">
-    <p><strong>Aula 02 - Nível Médio</strong><br />
-    O que é o vácuo espacial?</p>
-    <div class="botoes-acoes">
-      <button class="visualizar" data-id="1">Visualizar</button>
-      <button class="editar">Editar</button>
-      <button class="remover">Remover</button>
-    </div>
-  </div>
-
-  <div class="questao-item">
-    <p><strong>Aula 05 - Nível Fundamental</strong><br />
-    Para que serve um satélite geoestacionário?</p>
-    <div class="botoes-acoes">
-      <button class="visualizar" data-id="2">Visualizar</button>
-      <button class="editar">Editar</button>
-      <button class="remover">Remover</button>
-    </div>
-  </div>
-</section>
+<section class="lista-questoes"></section>
 
       <!-- Modal para mostrar a questão -->
       <div class="modal-container" id="modal">
@@ -80,7 +62,7 @@
             <button class="close-btn" id="close-btn">&times;</button>
           </div>
           <div class="modal-body">
-            <h3 id="modal-enunciado"></h3>
+            <textarea id="modal-enunciado-input" rows="4"></textarea>
             <div id="modal-alternativas" class="alternativas"></div>
           </div>
           <div class="modal-footer">
@@ -110,6 +92,6 @@
     </p>
   </div>
 
-  <script src="/js/script.js"></script>
+  <script type="module" src="/js/ger-quiz.js"></script>
 </body>
 </html>

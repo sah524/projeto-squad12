@@ -92,17 +92,27 @@ function initializePlanets() {
                 elements.messageBox.classList.remove('show');
             });
 
-            // Adiciona listener para clique (se houver alguma ação ao clicar no planeta, que não seja quiz)
-            // Se o clique não fizer nada, remova esta parte.
-            planetElement.addEventListener('click', () => {
-                if (userLevel >= planet.levelRequired) {
-                    // console.log(`Você clicou em ${planet.name}! Pronto para explorar!`);
-                    // Redirecionar para a página de quizzes ou alguma ação específica
-                    // window.location.href = `quizzes.html?planet=${planet.id}`;
-                    showMessageBox(`Você está pronto para explorar ${planet.name}!`);
+            const planetTema = {
+            mercury: "mercurio",
+            venus:   "venus",
+            earth:   "terra",
+            mars:    "marte",
+            jupiter: "jupiter",
+            saturn:  "saturno",
+            uranus:  "urano",
+            neptune: "netuno"
+            };
+            planetElement.addEventListener("click", () => {
+            if (userLevel >= planet.levelRequired) {
+                const tema = planetTema[planet.id];
+                if (tema) {
+                window.location.href = `quiz.html?tema=${tema}`;
                 } else {
-                    showMessageBox(`Você precisa alcançar o nível ${planet.levelRequired} para explorar ${planet.name}.`);
+                showMessageBox("Este planeta ainda não tem quiz.");
                 }
+            } else {
+                showMessageBox(`Você precisa do nível ${planet.levelRequired}.`);
+              }
             });
         }
     });

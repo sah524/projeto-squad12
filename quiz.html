@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz - Ideia Space</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styleguide.css">
+  <style>
+    .quiz-box { max-width: 600px; margin: 80px auto; color:#fff; }
+    .opcao    { margin:8px 0; padding:12px; border-radius:8px;
+                background:#262e5a; cursor:pointer; }
+    .opcao:hover { background:#334080; }
+    .hidden   { display:none; }
+  </style>
+</head>
+<body>
+  <div class="quiz-box">
+    <h2 id="tituloQuiz">Carregando...</h2>
+    <p id="pergunta"></p>
+    <div id="opcoes"></div>
+    <button id="btnProximo" class="hidden">Próxima</button>
+  </div>
+
+  <!-- Firebase / quiz logic -->
+  <script type="module" src="js/quiz.js"></script>
+</body>
+</html>
