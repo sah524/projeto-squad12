@@ -4,27 +4,70 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz - Ideia Space</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/styleguide.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/styleguide.css">
+  <link rel="stylesheet" href="css/telas.css">
   <style>
-    .quiz-box { max-width: 600px; margin: 80px auto; color:#fff; }
-    .opcao    { margin:8px 0; padding:12px; border-radius:8px;
-                background:#262e5a; cursor:pointer; }
-    .opcao:hover { background:#334080; }
-    .hidden   { display:none; }
+    h2 {
+      text-align: center;
+      padding: 1vw;
+      z-index: 1;
+    }
   </style>
 </head>
+
 <body>
-  <div class="quiz-box">
+  <div class="background-container">
+    <img class="background-image" src="img/fundo_estrelado.jpg" alt="Fundo" />
+
+    <!-- MENU SUPERIOR -->
+    <nav class="menu-navegacao">
+      <div class="menu-esquerda">
+        <img src="img/idea-space-logo-branca.png" alt="Logo" class="logo-menu" />
+        <a href="home.html">HOME</a>
+        <a href="quizzes.html">QUIZZES</a>
+        <a href="ranking.html">RANKING</a>
+      </div>
+      <div class="usuario-info">
+        <span>Nome Aluno</span>
+        <img src="img/avataaars.svg" alt="Avatar" />
+        <a href="index.html">Sair</a>
+      </div>
+    </nav>
+
+    <!-- QUIZ AQUI -->
     <h2 id="tituloQuiz">Carregando...</h2>
-    <p id="pergunta"></p>
-    <div id="opcoes"></div>
-    <button id="btnProximo" class="hidden">Próxima</button>
+    <main class="quiz-box">
+      <div class="enunciado"><p id="pergunta"></p></div><br><br>
+      <div id="opcoes"></div>
+      <button id="btnProximo" class="hidden">Próxima</button>
+    </main>
+
+    <!-- RODAPÉ -->
+    <div class="rodape">
+      <div>
+        <a href="https://www.instagram.com/ideiaspace" target="_blank" rel="noopener noreferrer">
+          <div class="text-wrapper-4">Instagram</div>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <div class="text-wrapper-5">WhatsApp</div>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <div class="text-wrapper-6">E-mail</div>
+        </a>
+      </div>
+      <img class="img" src="img/idea-space-logo-branca.png" alt="Logo Rodapé" />
+      <p class="a-educa-o-a-arma">
+        "A educação é a arma mais poderosa para mudar o mundo."<br />Nelson Mandela
+      </p>
+    </div>
   </div>
 
-  <!-- Firebase / quiz logic -->
+  <!-- SCRIPT -->
   <script type="module" src="js/quiz.js"></script>
+  <script type="module" src="js/auth-guard.js"></script>
+  <script type="module" src="js/logout.js"></script>
 </body>
 </html>

@@ -90,6 +90,7 @@
   font-size: 14px;
   margin-top: 15px;
   display: block;
+  align-items: center;
 }
 
 .rodape {
@@ -574,6 +575,7 @@ button.remover {
             font-size: 14px;
             margin-top: 15px;
             display: block;
+            align-items: center;
         }
 
         .rodape {
@@ -983,3 +985,374 @@ button.remover {
             cursor: pointer;
         }
 
+
+
+        .quizzes-int {
+    background-color: #f2f2f7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.quizzes-int .div {
+    background-color: var(--ghost-white);
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+}
+
+.quizzes-int .overlap-group {
+    position: absolute;
+    width: 1440px;
+    height: 765px;
+    top: 150px;
+    left: 0;
+}
+
+.quizzes-int .fundo-estrelado {
+    position: absolute;
+    width: 1316px;
+    height: 695px;
+    top: 70px;
+    left: 62px;
+    object-fit: cover;
+}
+
+.quizzes-int .galaxy {
+    position: absolute;
+    width: 1440px;
+    height: 697px;
+    top: 68px;
+    left: 0;
+    object-fit: cover;
+}
+
+.quizzes-int .frame {
+    width: 1440px;
+    height: 70px;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    background-color: var(--oxford-blue);
+}
+
+.quizzes-int .text-wrapper {
+    position: absolute;
+    width: 60px;
+    top: 18px;
+    left: 440px;
+    font-family: "TT Norms Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--ghost-white);
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.quizzes-int .text-wrapper-2 {
+    position: absolute;
+    width: 81px;
+    top: 18px;
+    left: 587px;
+    font-family: "TT Norms Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--ghost-white);
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.quizzes-int .text-wrapper-3 {
+    position: absolute;
+    width: 88px;
+    top: 18px;
+    left: 755px;
+    font-family: "TT Norms Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--ghost-white);
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.quizzes-int .text-wrapper-4 {
+    position: absolute;
+    width: 113px;
+    top: 14px;
+    left: 1124px;
+    font-family: "TT Norms Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--ghost-white);
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.quizzes-int .polygon {
+    position: absolute;
+    width: 17px;
+    height: 9px;
+    top: 44px;
+    left: 1125px;
+}
+
+.quizzes-int .text-wrapper-5 {
+    position: absolute;
+    width: 29px;
+    top: 40px;
+    left: 1222px;
+    font-family: "TT Norms Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--ghost-white);
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.quizzes-int .idea-space-logo {
+    top: 5px;
+    left: 207px;
+    position: absolute;
+    width: 124px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.quizzes-int .avataaars {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    top: -189px;
+    left: -1883px;
+}
+
+.quizzes-int .icons {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 15px;
+    left: 993px;
+    object-fit: cover;
+}
+
+.quizzes-int .frame-2 {
+    width: 62px;
+    height: 695px;
+    top: 70px;
+    left: 1378px;
+    position: absolute;
+    background-color: var(--oxford-blue);
+}
+
+.quizzes-int .frame-3 {
+    width: 62px;
+    height: 695px;
+    top: 70px;
+    left: 0;
+    position: absolute;
+    background-color: var(--oxford-blue);
+}
+
+.quizzes-int .caixa-alternativa {
+    width: 450px;
+    height: 70px;
+    top: 638px;
+    left: 495px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.quizzes-int .text-wrapper-6 {
+    position: absolute;
+    width: 410px;
+    top: 12px;
+    left: 26px;
+    font-family: "TT Norms Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--midnight-blue);
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.quizzes-int .div-wrapper {
+    top: 542px;
+    background-color: #00ff26;
+    position: absolute;
+    width: 450px;
+    height: 70px;
+    left: 495px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.quizzes-int .caixa-alternativa-2 {
+    top: 446px;
+    background-color: #ffffff;
+    position: absolute;
+    width: 450px;
+    height: 70px;
+    left: 495px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.quizzes-int .caixa-alternativa-3 {
+    top: 350px;
+    background-color: #ffffff;
+    position: absolute;
+    width: 450px;
+    height: 70px;
+    left: 495px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.quizzes-int .caixa-pergunta {
+    width: 600px;
+    height: 150px;
+    top: 130px;
+    left: 420px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.quizzes-int .p {
+    position: absolute;
+    width: 563px;
+    top: 17px;
+    left: 18px;
+    font-family: "TT Norms Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--midnight-blue);
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.quizzes-int .frame-4 {
+    width: 1440px;
+    height: 109px;
+    top: 915px;
+    left: 0;
+    position: absolute;
+    background-color: var(--oxford-blue);
+}
+
+.quizzes-int .a-educa-o-a-arma {
+    position: absolute;
+    width: 345px;
+    top: 18px;
+    left: 978px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.quizzes-int .img {
+    top: 8px;
+    left: 658px;
+    position: absolute;
+    width: 124px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.quizzes-int .text-wrapper-7 {
+    position: absolute;
+    width: 100px;
+    top: 24px;
+    left: 235px;
+    font-family: "TT Norms Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.quizzes-int .text-wrapper-8 {
+    position: absolute;
+    width: 100px;
+    top: 24px;
+    left: 376px;
+    font-family: "TT Norms Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.quizzes-int .text-wrapper-9 {
+    position: absolute;
+    width: 100px;
+    top: 24px;
+    left: 517px;
+    font-family: "TT Norms Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.quizzes-int .fundo-espaco {
+    position: absolute;
+    width: 1440px;
+    height: 150px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+    .quiz-box {
+      max-width: 600px;
+      margin: 4vw auto;
+      color: var(--midnight-blue);
+      background: rgba(242,242,247,0.05);
+      padding: 1.1vw;
+      border-radius: 10px;
+      z-index: 1;
+    }
+
+    .enunciado {
+      margin: 8px 0;
+      padding: 12px;
+      background: var(--ghost-white);
+      border-radius: 8px;
+      font-family: var(--font-bold);
+      font-size: larger;
+    }
+
+    .opcao {
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--ghost-white);
+      cursor: pointer;
+      font-family: var(--font-regular);
+      font-size: larger;
+    }
+
+    .opcao:hover {
+      background: var(--sky-blue-caryola);
+    }
+
+    .hidden {
+      display: none;
+    }
