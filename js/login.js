@@ -26,7 +26,7 @@ document.querySelector(".botao-entrar").addEventListener("click", async (e) => {
 
     // Redirecionar conforme o tipo de usuário
 if (userEmail.endsWith("@p.space.com")) {
-  window.location.href = "/professor/painel.html";
+  window.location.href = "professor/painel.html";
 } else if (userEmail.endsWith("@a.space.com")) {
   window.location.href = "home.html";
 } else {
@@ -42,6 +42,15 @@ if (userEmail.endsWith("@p.space.com")) {
       alert("Senha incorreta.");
     } else {
       alert("Erro ao fazer login.");
+    }
+  }
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    const botaoEntrar = document.querySelector(".botao-entrar");
+    if (botaoEntrar) {
+      botaoEntrar.click();
     }
   }
 });
