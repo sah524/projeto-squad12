@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,16 +11,17 @@
   <link rel="stylesheet" href="/css/styleguide.css">
   <link rel="stylesheet" href="/css/telas.css">
 </head>
+
 <body>
   <div class="background-container">
     <img class="background-image" src="/img/fundo_estrelado.jpg" alt="Fundo" />
     <nav class="menu-navegacao">
       <div class="menu-esquerda">
         <img src="/img/idea-space-logo-branca.png" alt="Logo" class="logo-menu" />
-    <a href="painel.html">PAINEL</a>
-    <a href="ger-quiz.html">GERENCIAR QUIZZES</a>
-    <a href="criar-quiz.html">CRIAR QUIZ</a>
-    <a href="resultados.html">RESULTADOS</a>
+        <a href="painel.html">PAINEL</a>
+        <a href="ger-quiz.html">GERENCIAR QUIZZES</a>
+        <a href="criar-quiz.html">CRIAR QUIZ</a>
+        <a href="resultados.html">RESULTADOS</a>
       </div>
       <div class="usuario-info">
         <span>Nome Professor</span>
@@ -52,9 +54,8 @@
         <button type="submit">FILTRAR</button>
       </form>
 
-<section class="lista-questoes"></section>
+      <section class="lista-questoes"></section>
 
-      <!-- Modal para mostrar a questão -->
       <div class="modal-container" id="modal">
         <div class="modal-content">
           <div class="modal-header">
@@ -93,7 +94,8 @@
   </div>
 
   <script type="module" src="/js/ger-quiz.js"></script>
-  <script type="module" src="/js/auth-guard.js"></script>
+  <script type="module" src="/js/auth-guard.js" data-role="professor"></script>
   <script type="module" src="/js/logout.js"></script>
 </body>
+
 </html>

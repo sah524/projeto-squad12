@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,13 @@
     <link rel="stylesheet" href="css/telas.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
     <div class="background-container">
-         <video class="background-video" autoplay muted loop>
-      <source src="movie/fundoEstrelado1.mp4" type="video/mp4">
+        <video class="background-video" autoplay muted loop>
+            <source src="movie/fundoEstrelado1.mp4" type="video/mp4">
 
-    </video>
+        </video>
         <nav class="menu-navegacao">
             <div class="menu-esquerda">
                 <img src="img/idea-space-logo-branca.png" alt="Logo" class="logo-menu" />
@@ -27,7 +29,7 @@
             </div>
             <div class="usuario-info">
                 <span>Nome Aluno</span>
-                <img src="img/avataaars.svg" alt="Avatar" />
+                <a href="avatar.html"><img id="userAvatar" src="img/avataaars.svg" alt="Avatar" /></a>
                 <a href="index.html">Sair</a>
             </div>
         </nav>
@@ -71,12 +73,14 @@
 
                 </div>
 
-                </div>
-            </main>
+            </div>
+        </main>
     </div>
     <div id="messageBox" class="message-box"></div>
-    <script src="js/game.js"></script>
-    <script type="module" src="js/auth-guard.js"></script>
+    <script type="module" src="js/user-info.js"></script>
+    <script type="module" src="js/game.js"></script>
+    <script type="module" src="js/auth-guard.js" data-role="aluno"></script>
     <script type="module" src="js/logout.js"></script>
 </body>
+
 </html>

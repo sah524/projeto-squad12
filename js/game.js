@@ -1,129 +1,108 @@
-// INÍCIO DO CÓDIGO JAVASCRIPT DO JOGO DO SISTEMA SOLAR (IDENTIFICADOR JS)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBjc740shFmvEvOM_iTMaPVJHsV3xtpa_8",
+    authDomain: "ideia-space.firebaseapp.com",
+    projectId: "ideia-space",
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+let userLevel = 0;
+
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const ref = doc(db, "alunos", user.email);
+        const snap = await getDoc(ref);
+
+        if (snap.exists()) {
+            const dados = snap.data();
+            userLevel = dados.nivel || 0;
+            initializeGame();
+        } else {
+            alert("⚠️ Aluno não encontrado no banco.");
+        }
+    } else {
+        window.location.href = "index.html";
+    }
+});
+
 const elements = {
-    gameContainer: document.getElementById('gameContainer'),
-    planetsGrid: document.getElementById('planetsGrid'), // Novo contêiner para os planetas
-    messageBox: document.getElementById('messageBox'),
-    // Elementos de quiz e navegação (foguete, botões) foram removidos
+    messageBox: document.getElementById("messageBox"),
 };
 
-// Nível atual do usuário (simulado para demonstração)
-// Você pode carregar isso de um banco de dados ou localStorage
-const userLevel = 3; // Exemplo: Usuário está no nível 3
-
-// Dados dos planetas, incluindo o nível necessário para "desbloqueá-los"
 const planetsData = [
-    {
-        id: 'sun', name: 'Sol', description: 'A estrela central do nosso Sistema Solar.', size: '15vw', levelRequired: 0
-    },
-    {
-        id: 'mercury', name: 'Mercúrio', description: 'O menor e mais próximo planeta do Sol.', size: '4vw', levelRequired: 1
-    },
-    {
-        id: 'venus', name: 'Vênus', description: 'O segundo planeta do Sol, conhecido por sua atmosfera densa.', size: '7vw', levelRequired: 1
-    },
-    {
-        id: 'earth', name: 'Terra', description: 'Nosso lar, o único planeta com vida conhecida.', size: '6vw', levelRequired: 2
-    },
-    {
-        id: 'mars', name: 'Marte', description: 'O "Planeta Vermelho", foco de exploração espacial.', size: '5vw', levelRequired: 2
-    },
-    {
-        id: 'jupiter', name: 'Júpiter', description: 'O maior planeta, um gigante gasoso.', size: '15vw', levelRequired: 3
-    },
-    {
-        id: 'saturn', name: 'Saturno', description: 'Famoso por seus anéis impressionantes.', size: '10vw', levelRequired: 3
-    },
-    {
-        id: 'uranus', name: 'Urano', description: 'Um gigante de gelo com uma atmosfera azul-esverdeada.', size: '7vw', levelRequired: 4
-    },
-    {
-        id: 'neptune', name: 'Netuno', description: 'O planeta mais distante, com ventos extremamente fortes.', size: '6vw', levelRequired: 4
-    },
-    {
-        id: 'pluto', name: 'Plutão', description: 'Um planeta anão no cinturão de Kuiper.', size: '3vw', levelRequired: 5
-    }
+    { id: 'sun', name: 'Sol', levelRequired: 0 },
+    { id: 'mercury', name: 'Mercúrio', levelRequired: 0 },
+    { id: 'venus', name: 'Vênus', levelRequired: 1 },
+    { id: 'earth', name: 'Terra', levelRequired: 2 },
+    { id: 'mars', name: 'Marte', levelRequired: 3 },
+    { id: 'jupiter', name: 'Júpiter', levelRequired: 4 },
+    { id: 'saturn', name: 'Saturno', levelRequired: 5 },
+    { id: 'uranus', name: 'Urano', levelRequired: 6 },
+    { id: 'neptune', name: 'Netuno', levelRequired: 7 },
 ];
 
-function showMessageBox(message, duration = 3000) {
-    elements.messageBox.textContent = message;
-    elements.messageBox.classList.add('show');
-    setTimeout(() => {
-        elements.messageBox.classList.remove('show');
-    }, duration);
+function showMessageBox(message, duration = 5000) {
+    const msg = elements.messageBox;
+    msg.textContent = message;
+    msg.classList.add('show');
+    setTimeout(() => msg.classList.remove('show'), duration);
 }
 
 function initializePlanets() {
-    planetsData.forEach((planet) => {
+    planetsData.forEach(planet => {
         const planetElement = document.getElementById(planet.id);
-        if (planetElement) {
-            // Define o tamanho (pode ser ajustado individualmente no CSS agora)
-            // planetElement.style.width = planet.size;
-            // planetElement.style.height = planet.size;
+        if (!planetElement) return;
 
-            // Adiciona o nome do planeta (já adicionado no HTML)
-            // const planetNameDiv = planetElement.querySelector('.planet-name');
-            // if (planetNameDiv) {
-            //     planetNameDiv.textContent = planet.name;
-            // }
+        if (userLevel >= planet.levelRequired) {
+            planetElement.classList.add('unlocked');
+            planetElement.classList.remove('locked');
+        } else {
+            planetElement.classList.add('locked');
+            planetElement.classList.remove('unlocked');
+        }
 
-            // Lógica para o indicador de nível
-            const levelIndicator = planetElement.querySelector('.level-indicator');
-            if (levelIndicator) {
-                if (userLevel >= planet.levelRequired) {
-                    planetElement.classList.add('unlocked'); // Adiciona classe para estilizar
-                    // levelIndicator.textContent = '✔️'; // Exemplo de ícone, pode ser vazio ou outro
-                } else {
-                    // levelIndicator.textContent = `Nível ${planet.levelRequired}`; // Mostra o nível necessário
-                    planetElement.classList.add('locked'); // Opcional: para estilizar planetas bloqueados
-                }
-            }
+        planetElement.addEventListener('mouseenter', () => {
+            const msg = (userLevel >= planet.levelRequired)
+                ? `✅ ${planet.name} desbloqueado!`
+                : `🔒 ${planet.name} bloqueado - Nível ${planet.levelRequired}`;
+            showMessageBox(msg);
+        });
 
-            // Adiciona listener para hover para mostrar nome e nível
-            planetElement.addEventListener('mouseenter', () => {
-                let statusMessage = `Nível necessário: ${planet.levelRequired}`;
-                if (userLevel >= planet.levelRequired) {
-                    statusMessage = `Desbloqueado! Seu Nível: ${userLevel}`;
-                } else {
-                    statusMessage = `Bloqueado. Nível necessário: ${planet.levelRequired}`;
-                }
-                showMessageBox(`${planet.name} - ${statusMessage}`);
-            });
-            planetElement.addEventListener('mouseleave', () => {
-                elements.messageBox.classList.remove('show');
-            });
+        planetElement.addEventListener('mouseleave', () => {
+            elements.messageBox.classList.remove('show');
+        });
 
-            const planetTema = {
+        const planetTema = {
             mercury: "mercurio",
-            venus:   "venus",
-            earth:   "terra",
-            mars:    "marte",
+            venus: "venus",
+            earth: "terra",
+            mars: "marte",
             jupiter: "jupiter",
-            saturn:  "saturno",
-            uranus:  "urano",
+            saturn: "saturno",
+            uranus: "urano",
             neptune: "netuno"
-            };
-            planetElement.addEventListener("click", () => {
+        };
+
+        planetElement.addEventListener('click', () => {
             if (userLevel >= planet.levelRequired) {
                 const tema = planetTema[planet.id];
                 if (tema) {
-                window.location.href = `quiz.html?tema=${tema}`;
+                    window.location.href = `quiz.html?tema=${tema}`;
                 } else {
-                showMessageBox("Este planeta ainda não tem quiz.");
+                    showMessageBox(`❌ ${planet.name} ainda não tem quiz.`);
                 }
             } else {
-                showMessageBox(`Você precisa do nível ${planet.levelRequired}.`);
-              }
-            });
-        }
+                showMessageBox(`🔒 Nível ${planet.levelRequired} necessário para acessar ${planet.name}.`);
+            }
+        });
     });
 }
 
-// Funções de inicialização
 function initializeGame() {
     initializePlanets();
-    // Não há mais necessidade de highlightPlanet ou ajustes de movimento
 }
-
-window.addEventListener('load', initializeGame);
-window.addEventListener('resize', initializeGame); // Re-executa para ajustar layout se a tela mudar
-// FIM DO CÓDIGO JAVASCRIPT DO JOGO DO SISTEMA SOLAR (IDENTIFICADOR JS)

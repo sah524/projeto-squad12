@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,10 +11,12 @@
   <link rel="stylesheet" href="css/styleguide.css">
   <link rel="stylesheet" href="css/telas.css">
   <style>
-    h2 {
+    h2,
+    h1 {
       text-align: center;
       padding: 1vw;
       z-index: 1;
+      font-size: 30px;
     }
   </style>
 </head>
@@ -22,7 +25,6 @@
   <div class="background-container">
     <img class="background-image" src="img/fundo_estrelado.jpg" alt="Fundo" />
 
-    <!-- MENU SUPERIOR -->
     <nav class="menu-navegacao">
       <div class="menu-esquerda">
         <img src="img/idea-space-logo-branca.png" alt="Logo" class="logo-menu" />
@@ -37,15 +39,15 @@
       </div>
     </nav>
 
-    <!-- QUIZ AQUI -->
-    <h2 id="tituloQuiz">Carregando...</h2>
+    <h1 id="tituloQuiz">Carregando...</h1>
     <main class="quiz-box">
-      <div class="enunciado"><p id="pergunta"></p></div><br><br>
+      <div class="enunciado">
+        <p id="pergunta"></p>
+      </div><br><br>
       <div id="opcoes"></div>
       <button id="btnProximo" class="hidden">Próxima</button>
     </main>
 
-    <!-- RODAPÉ -->
     <div class="rodape">
       <div>
         <a href="https://www.instagram.com/ideiaspace" target="_blank" rel="noopener noreferrer">
@@ -65,9 +67,10 @@
     </div>
   </div>
 
-  <!-- SCRIPT -->
   <script type="module" src="js/quiz.js"></script>
-  <script type="module" src="js/auth-guard.js"></script>
+  <script type="module" src="js/auth-guard.js" data-role="aluno"></script>
   <script type="module" src="js/logout.js"></script>
+  <script type="module" src="js/user-info.js"></script>
 </body>
+
 </html>

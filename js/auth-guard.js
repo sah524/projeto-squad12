@@ -1,16 +1,32 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
 
-const app = initializeApp({
-    apiKey: "AIzaSyBjc740shFmvEvOM_iTMaPVJHsV3xtpa_8",
-    authDomain: "ideia-space.firebaseapp.com",
-    projectId: "ideia-space",
-});
+const firebaseConfig = {
+  apiKey: "AIzaSyBjc740shFmvEvOM_iTMaPVJHsV3xtpa_8",
+  authDomain: "ideia-space.firebaseapp.com",
+  projectId: "ideia-space",
+};
 
+const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-onAuthStateChanged(auth, (e) => {
-  if (!e) {
-    window.location.href = "index.html";
+
+const scriptTag = document.currentScript;
+const role = scriptTag?.getAttribute("data-role");
+
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "/index.html";
+    return;
+  }
+
+  const email = user.email;
+
+  if (role === "professor" && !email.endsWith("@p.space.com")) {
+    alert("Acesso restrito a professores.");
+    window.location.href = "/home.html";
+  } else if (role === "aluno" && !email.endsWith("@a.space.com")) {
+    alert("Acesso restrito a alunos.");
+    window.location.href = "/professor/painel.html";
   }
 });

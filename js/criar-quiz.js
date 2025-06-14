@@ -1,38 +1,34 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
 
-//
-  const firebaseConfig = {
-    apiKey: "AIzaSyBjc740shFmvEvOM_iTMaPVJHsV3xtpa_8",
-    authDomain: "ideia-space.firebaseapp.com",
-    projectId: "ideia-space",
-    storageBucket: "ideia-space.firebasestorage.app",
-    messagingSenderId: "987903785161",
-    appId: "1:987903785161:web:b5331c4d5d304d49d43518"
-  };
-//  
-// Inicializa o Firebase
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBjc740shFmvEvOM_iTMaPVJHsV3xtpa_8",
+  authDomain: "ideia-space.firebaseapp.com",
+  projectId: "ideia-space",
+  storageBucket: "ideia-space.firebasestorage.app",
+  messagingSenderId: "987903785161",
+  appId: "1:987903785161:web:b5331c4d5d304d49d43518"
+};
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// DEBUG
 console.log("🔥 Firebase inicializado");
 
-// FORMULÁRIO
 const form = document.querySelector('.form-quiz');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   console.log("📥 Formulário enviado");
 
   const enunciado = document.getElementById('enunciado').value.trim();
-  const nivel     = document.getElementById('nivel').value;
-  const tema      = document.getElementById('tema').value;
-  const inputs    = form.querySelectorAll('input[type="text"]');
+  const nivel = document.getElementById('nivel').value;
+  const tema = document.getElementById('tema').value;
+  const inputs = form.querySelectorAll('input[type="text"]');
 
-  const correta    = inputs[0].value.trim();
+  const correta = inputs[0].value.trim();
   const incorretas = [inputs[1].value.trim(), inputs[2].value.trim(), inputs[3].value.trim()];
 
-  // VALIDAÇÃO:
   const temasValidos = ["mercurio", "venus", "terra", "marte", "jupiter", "saturno", "urano", "netuno"];
   const niveisValidos = ["fundamental", "medio", "superior"];
 
@@ -51,7 +47,6 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
-  // opcional: evitar alternativas duplicadas
   const todas = [correta, ...incorretas].map(op => op.toLowerCase());
   const unicas = new Set(todas);
   if (unicas.size < 4) {
@@ -59,7 +54,6 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
-  // Envio da questão para o firebase
   const questao = {
     pergunta: enunciado,
     resposta: correta,

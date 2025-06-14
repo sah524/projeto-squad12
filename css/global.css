@@ -1,6 +1,15 @@
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
   font-family: var(--font-regular);
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #0d1117; 
+  color: var(--ghost-white);
+}
+
+main {
+    flex-grow: 1;
 }

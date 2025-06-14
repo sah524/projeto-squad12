@@ -1,37 +1,36 @@
-/* INÍCIO DOS ESTILOS DO JOGO DO SISTEMA SOLAR (IDENTIFICADOR CSS) */
 .game-container {
     position: relative;
     width: 100%;
     min-height: 90vh;
-    overflow: hidden; /* Garante que nada saia da área */
-    display: flex; /* Usamos flex para centralizar o conteúdo geral */
+    overflow: hidden;
+    display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza itens horizontalmente */
-    justify-content: center; /* Centraliza itens verticalmente */
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    background-image: url('fundo_estrelado.jpg'); /* Fundo estático */
+    background-image: url('fundo_estrelado.jpg');
     background-size: cover;
     background-position: center;
 }
 
-/* Estilo para o Sol (agora fixo no centro) */
 .planet.sun {
-    position: absolute; /* Posição absoluta para fixar o Sol */
-    width: 15vw; /* Tamanho do Sol */
+    position: absolute;
+    width: 15vw;
     height: 15vw;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza o Sol */
-    background-image: url(../img/sol.png); background-size: 19.5vw; background-position: center;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/sol.png);
+    background-size: 19.5vw;
+    background-position: center;
     box-shadow: 0 0 50px rgba(255, 255, 0, 0.8);
-    z-index: 0; /* Para ficar atrás dos planetas */
+    z-index: 0;
     border-radius: 50%;
 }
 
-/* Contêiner para os planetas, usando Grid para layout estático */
 .planets-grid {
     position: absolute;
-    padding: 40px 40px 40px 0px;
+    padding: 2vw;
     width: 100%;
     height: 100%;
     display: grid;
@@ -39,58 +38,146 @@
     max-width: 90vw;
     max-height: 90vh;
     place-items: center;
-    /* NOVO AJUSTE: Tentando simular a ordem orbital visualmente de forma mais compacta */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2vw;
     grid-template-areas:
-        ". mercury venus ."      /* Mercúrio e Vênus (mais próximos do topo) */
-        "earth . . mars"         /* Terra e Marte (nas laterais, mais próximos do centro) */
-        ". sun-placeholder . ."  /* Placeholder para o Sol no centro */
-        "jupiter . . saturn"     /* Saturno movido para a direita */
-        "uranus neptune pluto .";/* Urano, Netuno e Plutão (mais externos) */
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 colunas */
-    /* ALTERADO AQUI: Ajuste nas frações das linhas para empurrar os planetas de baixo para cima */
-    grid-template-rows: 0.8fr 1fr 1fr 1fr 0.7fr; /* 5 linhas para melhor distribuição vertical */
-    /* ALTERADO AQUI: Reduzido o espaçamento entre as células do grid para compactar */
-    gap: 2vw; /* Era 3vw, tente 2vw ou até menos se necessário */
+        ". mercury venus ."
+        ". neptune earth ."
+        ". sun-placeholder . ."
+        "uranus . . mars"
+        ". saturn jupiter .";
 }
 
-/* Posicionamento dos planetas usando grid-area */
-.planet.mercury { grid-area: mercury; align-self: end; justify-self: center; }
-.planet.venus { grid-area: venus; align-self: end; justify-self: center; }
-.planet.earth { grid-area: earth; align-self: center; justify-self: end; }
-.planet.mars { grid-area: mars; align-self: center; justify-self: start; }
-.planet.jupiter { grid-area: jupiter; align-self: start; justify-self: end; }
-.planet.saturn { grid-area: saturn; align-self: start; justify-self: start; }
-.planet.uranus { grid-area: uranus; align-self: center; justify-self: end; }
-.planet.neptune { grid-area: neptune; align-self: center; justify-self: center; }
+.planet.mercury {
+    grid-area: mercury;
+    align-self: end;
+    justify-self: end;
+}
 
+.planet.venus {
+    grid-area: venus;
+    align-self: end;
+    justify-self: center;
+}
+
+.planet.earth {
+    grid-area: earth;
+    align-self: center;
+    justify-self: end;
+}
+
+.planet.mars {
+    grid-area: mars;
+    align-self: center;
+    justify-self: start;
+}
+
+.planet.jupiter {
+    grid-area: jupiter;
+    align-self: start;
+    justify-self: end;
+}
+
+.planet.saturn {
+    grid-area: saturn;
+    align-self: start;
+    justify-self: start;
+}
+
+.planet.uranus {
+    grid-area: uranus;
+    align-self: center;
+    justify-self: end;
+}
+
+.planet.neptune {
+    grid-area: neptune;
+    align-self: center;
+    justify-self: start;
+}
 
 .planet {
-    position: relative; /* Para posicionar o nome e o indicador de nível */
+    position: relative;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
     display: flex;
-    flex-direction: column; /* Para empilhar nome e indicador */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     font-weight: bold;
-    text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     user-select: none;
     border: 2px solid transparent;
-    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total */
-    z-index: 1; /* Z-index padrão */
+    box-sizing: border-box;
+    z-index: 1;
 }
 
-/* Tamanhos dos planetas (ajuste individualmente se necessário) */
-.planet.mercury { width: 4vw; height: 4vw; background-image: url(../img/mercurio.png); background-size: 4.8vw; background-position: center; }
-.planet.venus { width: 7vw; height: 7vw; background-image: url(../img/venus.png); background-size: 9.3vw; background-position: center; }
-.planet.earth { width: 6vw; height: 6vw; background-image: url(../img/terra.png); background-size: 7.3vw; background-position: center; }
-.planet.mars { width: 5vw; height: 5vw; background-image: url(../img/marte.png); background-size: 6.3vw; background-position: center; }
-.planet.jupiter { width: 15vw; height: 15vw; background-image: url(../img/jupiter.png); background-size: 17.5vw; background-position: center; }
-.planet.saturn { width: 10vw; height: 10vw; background-image: url(../img/saturno.png); background-size: 7.9vw; background-position: center; }
-.planet.uranus { width: 7vw; height: 7vw; background-image: url(../img/urano.png); background-size: 9.3vw; background-position: center;  }
-.planet.neptune { width: 6vw; height: 6vw; background-image: url(../img/netuno.png); background-size: 8.3vw; background-position: center; }
+.planet.mercury {
+    width: 4vw;
+    height: 4vw;
+    background-image: url(../img/mercurio.png);
+    background-size: 4.8vw;
+    background-position: center;
+}
+
+.planet.venus {
+    width: 7vw;
+    height: 7vw;
+    background-image: url(../img/venus.png);
+    background-size: 9.3vw;
+    background-position: center;
+}
+
+.planet.earth {
+    width: 6vw;
+    height: 6vw;
+    background-image: url(../img/terra.png);
+    background-size: 7.3vw;
+    background-position: center;
+}
+
+.planet.mars {
+    width: 5vw;
+    height: 5vw;
+    background-image: url(../img/marte.png);
+    background-size: 6.3vw;
+    background-position: center;
+}
+
+.planet.jupiter {
+    width: 10vw;
+    height: 10vw;
+    background-image: url(../img/jupiter.png);
+    background-size: 12vw;
+    background-position: center;
+}
+
+.planet.saturn {
+    width: 10vw;
+    height: 10vw;
+    background-image: url(../img/saturno.png);
+    background-size: 7.9vw;
+    background-position: center;
+}
+
+.planet.uranus {
+    width: 7vw;
+    height: 7vw;
+    background-image: url(../img/urano.png);
+    background-size: 9.3vw;
+    background-position: center;
+}
+
+.planet.neptune {
+    width: 6vw;
+    height: 6vw;
+    background-image: url(../img/netuno.png);
+    background-size: 8.3vw;
+    background-position: center;
+}
 
 
 /* Efeito de hover */
@@ -103,54 +190,56 @@
 
 .planet-name {
     position: absolute;
-    bottom: -1.5em; /* Posição do nome abaixo do planeta */
+    bottom: -1.5em;
     font-size: 0.8em;
     white-space: nowrap;
-    left: 50%; /* Centraliza o nome horizontalmente */
-    transform: translateX(-50%); /* Ajuste fino para centralização */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* Indicador de nível (círculo com borda, por exemplo) */
 .level-indicator {
     position: absolute;
-    top: -0.5em; /* Posição acima do planeta */
-    right: -0.5em; /* Posição à direita do planeta */
+    top: -0.5em;
+    right: -0.5em;
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
-    background-color: transparent; /* Padrão invisível */
-    border: 2px solid transparent; /* Padrão invisível */
-    display: none; /* Oculta por padrão, só mostra se o nível for atingido */
+    background-color: transparent;
+    border: 2px solid transparent;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 0.7em;
     font-weight: bold;
     color: white;
     text-shadow: none;
-    pointer-events: none; /* Não impede o clique no planeta */
+    pointer-events: none;
 }
 
-/* Estilo para planetas com nível atingido (ex: borda dourada) */
-.planet.unlocked .level-indicator {
-    display: flex; /* Exibe o indicador */
-    background-color: #4CAF50; /* Verde para "desbloqueado" */
-    border-color: #FFD700; /* Borda dourada */
+.planet.locked {
+    filter: grayscale(100%) brightness(50%);
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
-/* Estilos para o foguete e botões de navegação (removidos) */
-.rocket, .nav-button {
+.planet.unlocked {
+    filter: none;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.rocket,
+.nav-button {
     display: none;
 }
 
-/* Quiz Modal (oculto) */
 .quiz-modal {
-    display: none; /* Oculta o modal de quiz, pois ele será em outra página */
+    display: none;
 }
 
-/* Message Box (mantido para mensagens gerais) */
 .message-box {
     position: fixed;
-    top: 20px;
+    top: 80px;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.8);
@@ -162,5 +251,7 @@
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
-.message-box.show { opacity: 1; }
-/* FIM DOS ESTILOS DO JOGO DO SISTEMA SOLAR (IDENTIFICADOR CSS) */
+
+.message-box.show {
+    opacity: 1;
+}

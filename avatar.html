@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Avatar - Ideia Space</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #0a0a23;
+      color: white;
+    }
+
+    .avatar-preview {
+      margin: 20px auto;
+      width: 200px;
+      height: 200px;
+    }
+
+    .controls {
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .controls select,
+    .controls button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Monte seu Avatar</h1>
+
+  <div class="avatar-preview">
+    <img id="avatarImage" src="" alt="Seu Avatar" width="200" height="200" />
+  </div>
+
+  <div class="controls">
+    <select id="topType">
+<option value="NoHair">Careca</option>
+<option value="Eyepatch">Tapa-olho</option>
+<option value="Hat">Chapéu</option>
+<option value="Hijab">Hijab</option>
+<option value="Turban">Turbante</option>
+<option value="WinterHat1">Gorro de Inverno 1</option>
+<option value="WinterHat2">Gorro de Inverno 2</option>
+<option value="WinterHat3">Gorro de Inverno 3</option>
+<option value="WinterHat4">Gorro de Inverno 4</option>
+<option value="LongHairBigHair">Cabelo Longo Volumoso</option>
+<option value="LongHairBob">Cabelo Longo Bob</option>
+<option value="LongHairBun">Cabelo Longo Coque</option>
+<option value="LongHairCurly">Cabelo Longo Cacheado</option>
+<option value="LongHairCurvy">Cabelo Longo Ondulado</option>
+<option value="LongHairDreads">Cabelo Longo Dreads</option>
+<option value="LongHairFrida">Cabelo Longo Frida</option>
+<option value="LongHairFro">Cabelo Longo Afro</option>
+<option value="LongHairFroBand">Cabelo Longo Afro com Faixa</option>
+<option value="LongHairNotTooLong">Cabelo Longo Curto Demais</option>
+<option value="LongHairShavedSides">Cabelo Longo Laterais Raspadas</option>
+<option value="LongHairMiaWallace">Cabelo Longo Mia Wallace</option>
+<option value="LongHairStraight">Cabelo Longo Liso</option>
+<option value="LongHairStraight2">Cabelo Longo Liso 2</option>
+<option value="LongHairStraightStrand">Cabelo Longo Liso com Mecha</option>
+<option value="ShortHairDreads01">Cabelo Curto Dreads 1</option>
+<option value="ShortHairDreads02">Cabelo Curto Dreads 2</option>
+<option value="ShortHairFrizzle">Cabelo Curto Crespo</option>
+<option value="ShortHairShaggyMullet">Cabelo Curto Mullet Desfiado</option>
+<option value="ShortHairShortCurly">Cabelo Curto Cacheado Curto</option>
+<option value="ShortHairShortFlat">Cabelo Curto Liso Chapado</option>
+<option value="ShortHairShortRound">Cabelo Curto Redondo</option>
+<option value="ShortHairShortWaved">Cabelo Curto Ondulado</option>
+<option value="ShortHairSides">Cabelo Curto Laterais</option>
+<option value="ShortHairTheCaesar">Cabelo Curto César</option>
+<option value="ShortHairTheCaesarSidePart">Cabelo Curto César Repartido Lateral</option>
+    </select>
+
+<select id="hairColor">
+    <option value="Auburn">Castanho Avermelhado</option>
+    <option value="Black">Preto</option>
+    <option value="Blonde">Loiro</option>
+    <option value="BlondeGolden">Loiro Dourado</option>
+    <option value="Brown">Castanho</option>
+    <option value="BrownDark">Castanho Escuro</option>
+    <option value="PastelPink">Rosa Pastel</option>
+    <option value="Blue">Azul</option>
+    <option value="Platinum">Platinado</option>
+    <option value="Red">Vermelho</option>
+    <option value="SilverGray">Cinza Prateado</option>
+</select>
+
+<select id="accessoriesType">
+    <option value="Blank">Nenhum</option>
+    <option value="Kurt">Kurt (Óculos)</option>
+    <option value="Prescription01">Óculos de Grau 1</option>
+    <option value="Prescription02">Óculos de Grau 2</option>
+    <option value="Round">Óculos Redondo</option>
+    <option value="Sunglasses">Óculos de Sol</option>
+    <option value="Wayfarers">Óculos Wayfarer</option>
+</select>
+
+<select id="facialHairType">
+    <option value="Blank">Nenhum</option>
+    <option value="BeardMedium">Barba Média</option>
+    <option value="BeardLight">Barba Rala</option>
+    <option value="BeardMajestic">Barba Majestosa</option>
+    <option value="MoustacheFancy">Bigode Chique</option>
+    <option value="MoustacheMagnum">Bigode Magnum</option>
+</select>
+
+<select id="clotheType">
+    <option value="BlazerShirt">Camisa com Blazer</option>
+    <option value="BlazerSweater">Suéter com Blazer</option>
+    <option value="CollarSweater">Suéter com Gola</option>
+    <option value="GraphicShirt">Camisa Estampada</option>
+    <option value="Hoodie">Moletom com Capuz</option>
+    <option value="Overall">Macacão</option>
+    <option value="ShirtCrewNeck">Camisa Gola Redonda</option>
+    <option value="ShirtScoopNeck">Camisa Gola U</option>
+    <option value="ShirtVNeck">Camisa Gola V</option>
+</select>
+
+<select id="eyeType">
+    <option value="Close">Fechados</option>
+    <option value="Cry">Chorando</option>
+    <option value="Default">Padrão</option>
+    <option value="Dizzy">Tonto</option>
+    <option value="EyeRoll">Revirando os Olhos</option>
+    <option value="Happy">Felizes</option>
+    <option value="Hearts">Corações</option>
+    <option value="Side">De Lado</option>
+    <option value="Squint">Apertados</option>
+    <option value="Surprised">Surpreso</option>
+    <option value="Wink">Piscando</option>
+    <option value="WinkWacky">Piscada Maluca</option>
+</select>
+
+<select id="eyebrowType">
+    <option value="Angry">Brava</option>
+    <option value="AngryNatural">Brava Natural</option>
+    <option value="Default">Padrão</option>
+    <option value="DefaultNatural">Padrão Natural</option>
+    <option value="FlatNatural">Reta Natural</option>
+    <option value="RaisedExcited">Erguida Animada</option>
+    <option value="RaisedExcitedNatural">Erguida Animada Natural</option>
+    <option value="SadConcerned">Triste Preocupada</option>
+    <option value="SadConcernedNatural">Triste Preocupada Natural</option>
+    <option value="UnibrowNatural">Monocelha Natural</option>
+    <option value="UpDown">Para Cima/Baixo</option>
+    <option value="UpDownNatural">Para Cima/Baixo Natural</option>
+</select>
+
+<select id="mouthType">
+    <option value="Concerned">Preocupada</option>
+    <option value="Default">Padrão</option>
+    <option value="Disbelief">Incrédula</option>
+    <option value="Eating">Comendo</option>
+    <option value="Grimace">Careta</option>
+    <option value="Sad">Triste</option>
+    <option value="ScreamOpen">Grito Aberto</option>
+    <option value="Serious">Séria</option>
+    <option value="Smile">Sorrindo</option>
+    <option value="Tongue">Língua para Fora</option>
+    <option value="Twinkle">Brilhando</option>
+    <option value="Vomit">Vomitanto</option>
+</select>
+
+<select id="skinColor">
+    <option value="Tanned">Bronzeada</option>
+    <option value="Yellow">Amarela</option>
+    <option value="Pale">Pálida</option>
+    <option value="Light">Clara</option>
+    <option value="Brown">Marrom</option>
+    <option value="DarkBrown">Marrom Escura</option>
+    <option value="Black">Preta</option>
+</select>
+
+    <button id="btnSalvar">Salvar Avatar</button>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+    import { getAuth, updateProfile, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBjc740shFmvEvOM_iTMaPVJHsV3xtpa_8",
+      authDomain: "ideia-space.firebaseapp.com",
+      projectId: "ideia-space",
+    };
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const avatarImage = document.getElementById("avatarImage");
+
+    const montarUrl = () => {
+      const cabelo = document.getElementById("topType").value;
+      const corCabelo = document.getElementById("hairColor").value;
+      const acc = document.getElementById("accessoriesType").value;
+      const peloFacial = document.getElementById("facialHairType").value;
+      const roupa = document.getElementById("clotheType").value;
+      const olhos = document.getElementById("eyeType").value;
+      const sombrancelha = document.getElementById("eyebrowType").value;
+      const boca = document.getElementById("mouthType").value;
+      const corPele = document.getElementById("skinColor").value;
+
+      return `https://avataaars.io/?avatarStyle=Circle&topType=${cabelo}&hairColor=${corCabelo}&accessoriesType=${acc}&facialHairType=${peloFacial}&clotheType=${roupa}&eyeType=${olhos}&eyebrowType=${sombrancelha}&mouthType=${boca}&skinColor=${corPele}`;
+    };
+
+    const atualizarAvatar = () => {
+      const url = montarUrl();
+      avatarImage.src = url;
+    };
+
+    document.querySelectorAll("select").forEach(sel => sel.addEventListener("change", atualizarAvatar));
+
+    document.getElementById("btnSalvar").addEventListener("click", async () => {
+      const url = montarUrl();
+      const user = auth.currentUser;
+      if (!user) return alert("Você precisa estar logado.");
+
+      try {
+        await updateProfile(user, { photoURL: url });
+        alert("Avatar salvo com sucesso!");
+        window.location.href = "home.html";
+      } catch (e) {
+        console.error("Erro ao salvar avatar:", e);
+        alert("Erro ao salvar avatar.");
+      }
+    });
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) window.location.href = "index.html";
+      else atualizarAvatar();
+    });
+  </script>
+</body>
+
+</html>

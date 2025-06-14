@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementById('modal-enunciado').textContent = questao.enunciado;
-    
+
     const alternativasDiv = document.getElementById('modal-alternativas');
     alternativasDiv.innerHTML = "";
-    questao.alternativas.forEach(function(alternativa, index) {
+    questao.alternativas.forEach(function (alternativa, index) {
       alternativasDiv.innerHTML += `<p>Alternativa ${index + 1}: ${alternativa}</p>`;
     });
 
@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.classList.add('show');
   }
 
-  closeBtn.addEventListener('click', function() {
+  closeBtn.addEventListener('click', function () {
     modal.classList.remove('show');
   });
 
   const botoesVisualizar = document.querySelectorAll('.visualizar');
   botoesVisualizar.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       const questaoId = this.getAttribute('data-id');
       openModal(questaoId);
       console.log('Modal aberto para a questão', questaoId);

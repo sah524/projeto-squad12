@@ -478,7 +478,7 @@
   .planet.sun {
     width: 20vw;
     height: 20vw;
-    background-size: 22vw;
+    background-size: 25vw;
   }
 }
 
@@ -544,7 +544,7 @@
   .planet.sun {
     width: 25vw !important;
     height: 25vw !important;
-    background-size: 26vw !important;
+    background-size: 32vw !important;
   }
 
   .planet-name {

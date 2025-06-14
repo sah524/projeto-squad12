@@ -2,9 +2,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebas
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBjc740shFmvEvOM_iTMaPVJHsV3xtpa_8",
-    authDomain: "ideia-space.firebaseapp.com",
-    projectId: "ideia-space",
+  apiKey: "AIzaSyBjc740shFmvEvOM_iTMaPVJHsV3xtpa_8",
+  authDomain: "ideia-space.firebaseapp.com",
+  projectId: "ideia-space",
 };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -24,14 +24,13 @@ document.querySelector(".botao-entrar").addEventListener("click", async (e) => {
     const credenciais = await signInWithEmailAndPassword(auth, email, senha);
     const userEmail = credenciais.user.email;
 
-    // Redirecionar conforme o tipo de usuário
-if (userEmail.endsWith("@p.space.com")) {
-  window.location.href = "/professor/painel.html";
-} else if (userEmail.endsWith("@a.space.com")) {
-  window.location.href = "home.html";
-} else {
-  alert("E-mail não autorizado.");
-}
+    if (userEmail.endsWith("@p.space.com")) {
+      window.location.href = "/professor/painel.html";
+    } else if (userEmail.endsWith("@a.space.com")) {
+      window.location.href = "home.html";
+    } else {
+      alert("E-mail não autorizado.");
+    }
 
 
   } catch (error) {
@@ -42,6 +41,15 @@ if (userEmail.endsWith("@p.space.com")) {
       alert("Senha incorreta.");
     } else {
       alert("Erro ao fazer login.");
+    }
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    const botaoEntrar = document.querySelector(".botao-entrar");
+    if (botaoEntrar) {
+      botaoEntrar.click();
     }
   }
 });
