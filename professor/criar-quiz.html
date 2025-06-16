@@ -25,7 +25,7 @@
       </div>
       <div class="usuario-info">
         <span>Nome Professor</span>
-        <img src="img/avataaars.svg" alt="Avatar" />
+        <a href="avatar.html"><img id="userAvatar" src="img/avataaars.svg" alt="Avatar" /></a>
         <a href="/index.html">Sair</a>
       </div>
     </nav>
@@ -34,12 +34,12 @@
       <form class="form-quiz">
         <label for="enunciado">Enunciado da Questão:</label>
         <textarea id="enunciado" rows="5" placeholder="Insira o enunciado da questão..." required></textarea>
-
+      <!--
         <div class="upload-imagem">
           <button type="button" id="btnImagem">Adicionar Imagem</button>
           <input type="file" id="inputImagem" accept="image/*" style="display: none;" />
           <div id="previewImagem"></div>
-        </div>
+        </div> -->
 
         <input type="text" placeholder="Insira a alternativa correta" required />
         <input type="text" placeholder="Insira a alternativa incorreta" required />
@@ -91,6 +91,7 @@
   <script type="module" src="/js/criar-quiz.js"></script>
   <script type="module" src="/js/auth-guard.js" data-role="professor"></script>
   <script type="module" src="/js/logout.js"></script>
+  <script type="module" src="/js/user-info.js"></script>
 </body>
 
 </html>

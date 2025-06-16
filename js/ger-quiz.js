@@ -74,9 +74,15 @@ function abrirModal(q, id) {
   questaoAtualId = id;
   document.getElementById("modal-enunciado-input").value = q.pergunta;
 
-  modalAlt.innerHTML = q.opcoes.map((op, i) => `
-    <input type="text" class="input-alternativa" value="${op}">
-  `).join("");
+  modalAlt.innerHTML = q.opcoes.map(op => {
+    const isCorreta = op === q.resposta;
+    return `
+      <div class="alternativa-item ${isCorreta ? 'correta' : 'incorreta'}">
+        <input type="text" class="input-alternativa" value="${op}">
+        ${isCorreta ? '<span class="tag-correta">✔ Correta</span>' : ''}
+      </div>
+    `;
+  }).join("");
 
   modal.classList.add("show");
 }

@@ -21,23 +21,19 @@
         <a href="painel.html">PAINEL</a>
         <a href="ger-quiz.html">GERENCIAR QUIZZES</a>
         <a href="criar-quiz.html">CRIAR QUIZ</a>
-        <a href="resultados.html">RESULTADOS</a>
       </div>
       <div class="usuario-info">
         <span>Nome Professor</span>
-        <img src="img/avataaars.svg" alt="Avatar" />
+        <a href="/avatar.html"><img id="userAvatar" src="img/avataaars.svg" alt="Avatar" /></a>
         <a href="/index.html">Sair</a>
       </div>
     </nav>
     <main class="professor-painel">
       <h1>Painel do Professor</h1>
       <div class="painel-opcoes">
-        <button>Editar Questões</button>
-        <button>Adicionar Questões</button>
-        <button>Remover Questões</button>
-        <button>Desempenho do Aluno</button>
-        <button>Desempenho da Turma</button>
-        <button>Acesso Rápido</button>
+        <a href="ger-quiz.html"><button>Gerenciar Questões</button></a>
+        <a href="criar-quiz.html"><button>Adicionar Questões</button></a>
+        <a href="/ranking.html"><button>Ranking Alunos</button></a>
       </div>
     </main>
   </div>
@@ -60,6 +56,7 @@
   </div>
   <script type="module" src="/js/auth-guard.js" data-role="professor"></script>
   <script type="module" src="/js/logout.js"></script>
+  <script type="module" src="/js/user-info.js"></script>
 </body>
 
 </html>

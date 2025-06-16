@@ -186,32 +186,37 @@
     <button id="btnSalvar">Salvar Avatar</button>
   </div>
 
-  <script type="module">
+    <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
     import { getAuth, updateProfile, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
+    import { getFirestore, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyBjc740shFmvEvOM_iTMaPVJHsV3xtpa_8",
       authDomain: "ideia-space.firebaseapp.com",
       projectId: "ideia-space",
     };
+
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
+    const db = getFirestore(app);
 
     const avatarImage = document.getElementById("avatarImage");
 
     const montarUrl = () => {
-      const cabelo = document.getElementById("topType").value;
-      const corCabelo = document.getElementById("hairColor").value;
-      const acc = document.getElementById("accessoriesType").value;
-      const peloFacial = document.getElementById("facialHairType").value;
-      const roupa = document.getElementById("clotheType").value;
-      const olhos = document.getElementById("eyeType").value;
-      const sombrancelha = document.getElementById("eyebrowType").value;
-      const boca = document.getElementById("mouthType").value;
-      const corPele = document.getElementById("skinColor").value;
-
-      return `https://avataaars.io/?avatarStyle=Circle&topType=${cabelo}&hairColor=${corCabelo}&accessoriesType=${acc}&facialHairType=${peloFacial}&clotheType=${roupa}&eyeType=${olhos}&eyebrowType=${sombrancelha}&mouthType=${boca}&skinColor=${corPele}`;
+      const params = new URLSearchParams({
+        avatarStyle: "Circle",
+        topType: document.getElementById("topType").value,
+        hairColor: document.getElementById("hairColor").value,
+        accessoriesType: document.getElementById("accessoriesType").value,
+        facialHairType: document.getElementById("facialHairType").value,
+        clotheType: document.getElementById("clotheType").value,
+        eyeType: document.getElementById("eyeType").value,
+        eyebrowType: document.getElementById("eyebrowType").value,
+        mouthType: document.getElementById("mouthType").value,
+        skinColor: document.getElementById("skinColor").value,
+      });
+      return `https://avataaars.io/?${params.toString()}`;
     };
 
     const atualizarAvatar = () => {
@@ -227,9 +232,30 @@
       if (!user) return alert("Você precisa estar logado.");
 
       try {
+        // Atualiza no Authentication (Auth)
         await updateProfile(user, { photoURL: url });
-        alert("Avatar salvo com sucesso!");
-        window.location.href = "home.html";
+
+        // Atualiza também no Firestore (opcional)
+        const email = user.email;
+        let ref = null;
+
+        if (email.endsWith("@a.space.com")) {
+          ref = doc(db, "alunos", email);
+        } else if (email.endsWith("@p.space.com")) {
+          ref = doc(db, "professores", email);
+        }
+
+        if (ref) {
+          await updateDoc(ref, { avatarURL: url });
+        }
+
+        alert("✅ Avatar salvo com sucesso!");
+        if (email.endsWith("@p.space.com")) {
+          window.location.href = "/professor/painel.html";
+        } else {
+          window.location.href = "home.html";
+        }
+
       } catch (e) {
         console.error("Erro ao salvar avatar:", e);
         alert("Erro ao salvar avatar.");
@@ -240,6 +266,7 @@
       if (!user) window.location.href = "index.html";
       else atualizarAvatar();
     });
+
   </script>
 </body>
 
