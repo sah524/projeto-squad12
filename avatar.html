@@ -232,10 +232,8 @@
       if (!user) return alert("Você precisa estar logado.");
 
       try {
-        // Atualiza no Authentication (Auth)
         await updateProfile(user, { photoURL: url });
 
-        // Atualiza também no Firestore (opcional)
         const email = user.email;
         let ref = null;
 

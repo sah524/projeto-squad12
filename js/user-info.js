@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
 
@@ -8,9 +8,11 @@ const firebaseConfig = {
     projectId: "ideia-space",
 };
 
-const app = initializeApp(firebaseConfig);
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 const db = getFirestore(app);
 const auth = getAuth(app);
+const avatarImg = document.getElementById("userAvatar");
+const nomeSpan = document.querySelector(".usuario-info span");
 
 onAuthStateChanged(auth, async (user) => {
     if (user) {
@@ -27,16 +29,17 @@ onAuthStateChanged(auth, async (user) => {
 
         if (snap.exists()) {
             const nome = snap.data().nome;
-            document.querySelector(".usuario-info span").textContent = nome;
+            if (nomeSpan) nomeSpan.textContent = nome;
         } else {
-            document.querySelector(".usuario-info span").textContent = email;
+            if (nomeSpan) nomeSpan.textContent = email;
+        }
+
+        if (avatarImg) {
+            if (user.photoURL) {
+                avatarImg.src = user.photoURL;
+            } else {
+                avatarImg.src = "img/avataaars.svg";
+            }
         }
     }
-    if (user.photoURL) {
-        avatarImg.src = user.photoURL;
-    } else {
-        avatarImg.src = "img/avataaars.svg";
-    }
 });
-
-const avatarImg = document.getElementById("userAvatar");
